@@ -20,8 +20,18 @@ overflow:hidden;
 <image xlink:href="title.png" width="160" height="90"/>
 <g cursor="pointer">
 <rect width="40" height="10" x="60" y="54" rx="2" ry="2"></rect>
-<text x="80" y="60" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="10">START</text>
+<text x="80" y="60" font-family="sans-serif" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="8">START</text>
 </g>
+<circle cx="2" cy="88" r="2"  onclick="play_pause()" fill="white"/>
 </svg>
+<audio id="myAudio" preload loop>
+<source src="tune.mp3" type="audio/mpeg">
+</audio>
+<script>
+	function play_pause(){
+	var myAudio=document.getElementById("myAudio");
+	if(myAudio.paused){myAudio.play();}else{myAudio.pause();}
+	}
+</script>
 </body>
 </html>
