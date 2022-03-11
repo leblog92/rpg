@@ -1,0 +1,54 @@
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Welcome to the Dungeon</title>
+<style>
+html,body{
+height:100%;
+margin:0;
+}
+body{
+background:#000;
+overflow:hidden;
+}
+#room{
+	transition:1s;
+}
+</style>
+</head>
+<body>
+<svg width="100%" height="100%" viewbox="0 0 160 90">
+<g transform:translate(0 0)" id="room">
+	<image xlink:href="00.jpg" width="160" height="90" x="-320"/>
+	<image xlink:href="00.jpg" width="160" height="90" x="-160"/>
+	<image xlink:href="00.jpg" width="160" height="90" x="0"/>
+	<image xlink:href="00.jpg" width="160" height="90" x="160"/>
+	<image xlink:href="00.jpg" width="160" height="90" x="320"/>
+</g>
+	<rect fill="grey" width="10" height="10" x="5" y="40" id="left_butt"/>
+	<rect fill="grey" width="10" height="10" x="145" y="40" id="right_butt"/>
+</svg>
+
+<script>
+var room=document.getElementById("room");
+var left_butt=document.getElementById("left_butt");
+var right_butt=document.getElementById("right_butt");
+var pos=0;
+
+left_butt.addEventListener("click",turnleft);
+right_butt.addEventListener("click",turnright);
+
+function turnleft(){
+pos=pos+160;
+	room.setAttribute("transform","translate("+pos+" 0)");
+}
+
+function turnright(){
+pos=pos-160;
+	room.setAttribute("transform","translate("+pos+" 0)");
+}
+
+
+</script>
+</body>
+</html>
